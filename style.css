@@ -122,32 +122,35 @@
 
 /* mobile media query  */
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
-    .bookmarks {
-        display: none;
-        color: black;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-}
-
-@media (max-width:768px) {
-
-    .bookmarks {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: white;
+    .nav {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-between;
         padding: 20px;
-        border-radius: 10px;
-        color: black;
-        background-color: #FAF6EC;
+    }
 
+    .success {
+        order: 1;
+    }
+
+    .theme {
+        order: 2;
+    }
+
+    .bookmarks {
+        display: none;
+        order: 3;
+        flex-direction: column;
+        flex-basis: 100%;
+        width: 100%;
+        margin-top: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #FAF6EC;
+        border-radius: 12px;
+        gap: 15px;
     }
 
     .bookmarks.active {
@@ -156,6 +159,10 @@
 
     .bookmarks.active a {
         color: rgb(2, 6, 108);
+    }
+
+    .menu-btn {
+        display: block;
     }
 
     .success p {
