@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="FAVICON SUCCESS.png">
+    <title>success acadmey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5736f22fd4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+        <!-- navbar -->
+
+        <div class="nav hidden" id="home">
+            <div class="success">
+                <p>
+                    SUCCESS ACADEMY
+                </p>
+            </div>
+
+            <div class="bookmarks">
+                <a href="#home">home</a>
+                <a href="#notes">notes</a>
+                <a href="#video">tutorials</a>
+                <a href="#about">about</a>
+                <a href="#footer">contact</a>
+                <a href="Admin/admin.html" id="teacher-login">Teacher login <i class="fa-solid fa-user-lock"></i></a>
+            </div>
+
+
+            <div class="theme">
+
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--  hero section  -->
+
+        <div class="herosection hidden">
+
+
+            <!-- left hero section -->
+
+            <div class="left-hero-section">
+                <h1>Trusted Learning Platform</h1>
+                <p class="learn-better">learn better...</p>
+                <p class="score-higher">score higher...</p>
+                <p class="description">Access well-organized notes, video tutorials,
+                    and practice material designed to help students
+                    learn faster and smarter.Small batches, subject-expert mentors, and weekly progress reports — built
+                    for students in grades 6-10 who want to actually understand the subject, not just memorize it for
+                    the exam
+                </p>
+
+                <div class="btn">
+                    <a href="#notes" class="browse-btn">Browse Notes</a>
+                    <a href="#video" class="watch-btn">Watch Tutorials</a>
+                </div>
+
+                <div class="cards">
+
+                    <div class="stat">
+                        <p class="stat-head">6+</p>
+                        <p class="stat-topic">years teaching</p>
+                    </div>
+
+                    <div class="stat">
+                        <p class="stat-head">100+</p>
+                        <p class="stat-topic">student mentored </p>
+                    </div>
+
+                    <div class="stat">
+                        <p class="stat-head">96%</p>
+                        <p class="stat-topic">score improvement</p>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+            <!-- right hero section -->
+
+            <div class="hero-right-section">
+
+                <div class="photo1">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80"
+                        alt="Student studying with notes">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- notes section -->
+
+        <section class="notes-section hidden" id="notes">
+            <div class="section-inner">
+                <p class="eyebrow">Study material</p>
+                <h2>All your <span class="mark">notes</span>, in one shelf.</h2>
+                <p class="section-sub">
+                    Teachers upload chapter notes right after class, students download them anytime.
+                    No more "sir please resend the PDF" messages.
+                </p>
+
+
+
+                <!-- NOTES LIST -->
+                <div class="notes-list">
+                    <div class="notes-toolbar">
+                        <h3>Uploaded notes</h3>
+                        <span class="count" id="notes-count">1 note</span>
+                    </div>
+
+                    <div class="notes-grid" id="notes-grid">
+                        <div class="note-card">
+                            <div class="note-tab tab-math"></div>
+                            <div class="note-body">
+                                <div class="note-subject">Mathematics &middot; Grade 10</div>
+                                <div class="note-title">Trigonometry &ndash; Chapter 4</div>
+                                <div class="note-meta">
+                                    <span>Uploaded 2 days ago</span>
+                                    <a href="#" class="note-download">&#8595; PDF</a>
+                                    <button class="note-delete" onclick="deleteNote(this)">&#10005; Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="empty-state" id="empty-state">No notes uploaded yet. Be the first!</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- video tutorials section -->
+
+        <section class="video-section hidden" id="video">
+            <p class="eyebrow">Recorded lectures</p>
+            <h2>Watch it again, <span class="mark">anytime.</span></h2>
+            <p class="section-sub">
+                Missed a class or need a refresher before the exam? Every recorded lecture
+                lives here, sorted by subject.
+            </p>
+
+            <!-- UPLOAD STRIP (teacher only) -->
+
+            <div class="toolbar">
+                <h3>Tutorial library</h3>
+                <span class="count" id="video-count">1 video</span>
+            </div>
+
+            <div class="video-grid" id="video-grid">
+                <!-- Default sample video -->
+                <div class="video-card" data-sample="true">
+                    <div class="thumb-wrap">
+                        <div class="perf top">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80"
+                            alt="Sample tutorial thumbnail">
+                        <button class="play-btn" onclick="playVideo(this, null)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1D2B4F">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                        <div class="duration-badge">12:34</div>
+                        <div class="perf bottom">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-subject">Mathematics</div>
+                        <div class="video-title">Introduction to Trigonometry</div>
+                        <div class="video-meta">
+                            <span>Uploaded 3 days ago</span>
+                            <button class="video-delete" onclick="deleteVideo(this)">&#10005; Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- light box -->
+
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-inner" id="lightbox-inner">
+                <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- teacher about section -->
+
+        <section class="about-section hidden" id="about">
+            <div class="section-inner">
+                <p class="eyebrow">Meet your teacher</p>
+                <h2>The person behind <span class="mark">the chalkboard.</span></h2>
+
+                <div class="about-layout">
+
+                    <!-- LEFT: photo + facts -->
+                    <div class="teacher-photo-wrap">
+                        <div class="tape"></div>
+                        <div class="teacher-photo">
+                            <img src="nitin profeesional 2.png" alt="Teacher portrait">
+
+                        </div>
+                        <div class="teacher-name">Mr Nitin Kumar</div>
+                        <div class="teacher-title">Founder &amp; Lead Mathematics &amp; Science Tutor</div>
+                        <div class="chip-row">
+                            <span class="chip">B.A history honours</span>
+                            <span class="chip">B.Ed.</span>
+                            <span class="chip">M.S.W</span>
+                            <span class="chip">6+ yrs experience</span>
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <p class="bio">
+                            <strong>Mr. Nitin kumar</strong> has been teaching Mathematics and Science
+                            to grades 6&ndash;10 for over 5 years. he started this tuition center in 2020
+                            with a simple idea &mdash; small batches, patient doubt-solving, and lessons that
+                            connect to real exam patterns. Since then he has personally mentored over
+                            200 students, many of whom now study engineering, medicine, and science at
+                            top colleges. Outside class, he trains new tutors on the same teaching method
+                            and regularly holds free doubt-clearing sessions for board exam students.
+                        </p>
+
+                        <h3 class="panel-title">Education</h3>
+                        <ul class="timeline">
+                            <li>
+                                <div class="edu-year">2024</div>
+                                <div class="edu-degree">B.Ed. — Bachelor of Education</div>
+                                <div class="edu-school">University of Delhi</div>
+                            </li>
+                            <li>
+                                <div class="edu-year">2021</div>
+                                <div class="edu-degree">M.s.w—Master of Social Work</div>
+                                <div class="edu-school">IGNOU (Indira Gandhi National Open University)</div>
+                            </li>
+                            <li>
+                                <div class="edu-year">2006</div>
+                                <div class="edu-degree">BA — Bachelor of Arts</div>
+                                <div class="edu-school">University of Delhi</div>
+                            </li>
+                        </ul>
+                        <h3 class="panel-title">Achievements</h3>
+                        <div class="achievements">
+
+                            <div class="achievement-card">
+                                <div class="achievement-icon">📈</div>
+                                <div>
+                                    <div class="achievement-title">96% average score jump</div>
+                                    <div class="achievement-desc">Across students in last 3 batches</div>
+                                </div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🎓</div>
+                                <div>
+                                    <div class="achievement-title">200+ students mentored</div>
+                                    <div class="achievement-desc">Since the center opened in 2020</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- student testimony section -->
+
+        <section class="testimonial-section hidden">
+            <div class="section-inner">
+                <p class="eyebrow">In their words</p>
+                <h2>What <span class="mark">students</span> say.</h2>
+                <p class="section-sub">
+                    Real notes from real students &mdash; shared right after their results came in.
+                </p>
+
+                <!-- COMPACT UPLOAD BAR (for teacher) -->
+                <div class="upload-bar">
+                    <span class="upload-bar-label">✍️ Add:</span>
+                    <label class="photo-btn" id="photo-btn">
+                        <img id="photo-preview" src="" alt="" style="display:none;">
+                        <span id="photo-placeholder">＋</span>
+                        <input type="file" id="testimony-photo" accept="image/*">
+                    </label>
+                    <input type="text" id="testimony-name" placeholder="Student name">
+                    <textarea class="testimony-input" id="testimony-text" placeholder="Their testimony..."
+                        rows="1"></textarea>
+                    <button class="upload-submit-small" id="testimony-submit" disabled
+                        title="Add testimonial">&#10003;</button>
+                </div>
+
+                <div class="testimonial-grid" id="testimonial-grid">
+                    <!-- Default hardcoded testimonial -->
+                    <div class="testimonial-card">
+                        <div class="quote-mark">&ldquo;</div>
+                        <p class="testimony-text">
+                            I used to be scared of Math before joining. Now it's actually my favourite
+                            subject &mdash; the way Nitin sir explains concepts with real examples just makes
+                            everything click.
+                        </p>
+                        <div class="testimonial-person">
+                            <img src="abhi.jpeg" alt="Student photo">
+                            <div>
+                                <div class="person-name">Abhishek</div>
+                                <div class="person-meta">Grade 10 &middot; Mathematics and Science</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-mark">&ldquo;</div>
+                        <p class="testimony-text">
+                            The classes are easy to understand and the concepts are explained very clearly. I feel much
+                            more confident in my studies now.
+                        </p>
+                        <div class="testimonial-person">
+                            <img src="empty profile pic.png" alt="Student photo">
+                            <div>
+                                <div class="person-name">Aarush yadav</div>
+                                <div class="person-meta">Grade 10 &middot; Mathematics and Science</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-mark">&ldquo;</div>
+                        <p class="testimony-text">
+                            Regular guidance and practice have helped me improve both my understanding and my
+                            confidence. I really enjoy learning here.
+                        </p>
+                        <div class="testimonial-person">
+                            <img src="empty profile pic.png" alt="Student photo">
+                            <div>
+                                <div class="person-name">Aditya</div>
+                                <div class="person-meta">Grade 10 &middot; Mathematics and Science</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="empty-state" id="empty-state">No testimonials yet.</div>
+            </div>
+        </section>
+
+
+
+        <!-- footer -->
+        <footer class="footer hidden" id="footer">
+
+            <div class="footer-container">
+
+                <div class="footer-left">
+                    <h2>SUCCESS ACADEMY</h2>
+                    <p>
+                        Helping students learn smarter with quality notes,
+                        video tutorials, and regular study resources.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+
+                    <a href="#home">Home</a>
+                    <a href="#notes">Notes</a>
+                    <a href="#video">Tutorials</a>
+                    <a href="#about">About</a>
+                    <a href="#footer">Contact</a>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+
+                    <p>📍 Delhi, India</p>
+                    <p> 📧 ntomar9560@gmail.com</p>
+                    <p>📞 +91 9560478750</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="copyright">
+                © 2026 All Rights Reserved.
+                <span class="ASHISH">Developed by ASHISH</span>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="index.js"></script>
+        <script src="https://kit.fontawesome.com/5736f22fd4.js" crossorigin="anonymous"></script>
+
+    </div>
+
+</body>
+
+</html>
