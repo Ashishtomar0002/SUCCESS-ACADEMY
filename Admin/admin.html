@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="FAVICON SUCCESS.png">
+</head>
+
+<body>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <div class="login-heading">Welcome back</div>
+            <p class="login-sub">Log in to manage notes, videos </p>
+
+            <div class="login-error" id="login-error"></div>
+
+            <form id="login-form">
+                <div class="login-field">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="teacher@example.com" required>
+                </div>
+                <div class="login-field">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password"
+                        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+                </div>
+                <button type="submit" class="login-btn" id="login-btn">Log in</button>
+            </form>
+
+            <p class="api-note">
+                Connects to <code>/api/auth/login</code> on your backend.<br>
+                Update the <code>API</code> URL in the script if it's not running on localhost:5000.
+            </p>
+        </div>
+    </div>
+
+    <!-- ================= DASHBOARD ================= -->
+    <div id="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-brand">Success Academy Admin</div>
+            <ul class="sidebar-nav">
+                <li><button class="nav-btn active" data-panel="overview">📊 Overview</button></li>
+                <li><button class="nav-btn" data-panel="notes">📝 Notes</button></li>
+                <li><button class="nav-btn" data-panel="videos">🎬 Videos</button></li>
+                <li><button class="nav-btn" data-panel="testimonials">💬 Testimonials</button></li>
+            </ul>
+            <button class="sidebar-logout" id="logout-btn">Log out</button>
+        </aside>
+
+        <main class="main-content">
+
+            <!-- OVERVIEW -->
+            <section class="panel active" id="panel-overview">
+                <div class="main-header">
+                    <h1>Overview</h1>
+                    <span class="welcome">Welcome back, Teacher 👋</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card notes">
+                        <div class="stat-num" id="stat-notes">&ndash;</div>
+                        <div class="stat-label">Total notes</div>
+                    </div>
+                    <div class="stat-card videos">
+                        <div class="stat-num" id="stat-videos">&ndash;</div>
+                        <div class="stat-label">Total videos</div>
+                    </div>
+                    <div class="stat-card testimonials">
+                        <div class="stat-num" id="stat-testimonials">3</div>
+                        <div class="stat-label">Testimonials</div>
+                    </div>
+                </div>
+                <p class="panel-title">Recent activity</p>
+                <p style="color:var(--graphite); font-size:0.88rem;">Switch to Notes or Videos from the sidebar to
+                    upload, view, or delete content.</p>
+            </section>
+
+            <!-- NOTES -->
+            <section class="panel" id="panel-notes">
+                <div class="main-header">
+                    <h1>Notes</h1>
+                </div>
+
+                <!-- ADD NOTE -->
+                <p class="panel-title">Add new note</p>
+
+                <div class="admin-form">
+                    <input type="text" id="admin-note-title" placeholder="Note title">
+
+                    <input type="text" id="admin-note-subject" placeholder="Subject">
+
+                    <input type="text" id="admin-note-grade" placeholder="Grade">
+
+                    <input type="file" id="admin-note-file" accept=".pdf">
+
+                    <button class="login-btn" id="admin-note-upload">
+                        Upload Note
+                    </button>
+
+                    <p id="admin-note-message"></p>
+                </div>
+
+                <!-- EXISTING NOTES -->
+                <p class="panel-title">All uploaded notes</p>
+
+                <div class="loading-msg" id="notes-loading">
+                    Loading notes...
+                </div>
+
+                <table class="data-table" id="notes-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="notes-tbody"></tbody>
+                </table>
+
+                <div class="table-empty" id="notes-empty">
+                    No notes uploaded yet.
+                </div>
+            </section>
+
+            <!-- VIDEOS -->
+            <section class="panel" id="panel-videos">
+                <div class="main-header">
+                    <h1>Videos</h1>
+                </div>
+
+                <!-- ADD VIDEO -->
+                <p class="panel-title">Add new video</p>
+
+                <div class="admin-form">
+                    <input type="text" id="admin-video-title" placeholder="Video title">
+
+                    <input type="text" id="admin-video-subject" placeholder="Subject">
+
+                    <input type="text" id="admin-video-grade" placeholder="Grade">
+
+                    <input type="file" id="admin-video-file" accept="video/*">
+
+                    <button class="login-btn" id="admin-video-upload">
+                        Upload Video
+                    </button>
+
+                    <p id="admin-video-message"></p>
+                </div>
+
+                <!-- EXISTING VIDEOS -->
+                <p class="panel-title">All uploaded video tutorials</p>
+
+                <div class="loading-msg" id="videos-loading">
+                    Loading videos...
+                </div>
+
+                <table class="data-table" id="videos-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="videos-tbody"></tbody>
+                </table>
+
+                <div class="table-empty" id="videos-empty">
+                    No videos uploaded yet.
+                </div>
+            </section>
+
+
+
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+
+
+</body>
+
+</html>
