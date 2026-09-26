@@ -1,6 +1,6 @@
 const authMiddleware = require("../middleware/authMiddleware");
 const express = require("express");
-const Video = require("../models/video");
+const Video = require("../models/Video");
 
 const router = express.Router();
 
